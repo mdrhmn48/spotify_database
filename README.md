@@ -8,13 +8,13 @@ Data Manipulation
 Several data manipulation steps are performed on the DataFrame df:
 
 The unnecessary columns ('Unnamed: 0', 'artist_ids', 'id', 'album_id') are dropped, resulting in the DataFrame core_df.
-    The DataFrame core_df is further divided into two DataFrames: song_df and album_df.
-        song_df contains columns: 'name', 'track_number', 'disc_number', 'duration_ms', 'time_signature', 'year', and 'release_date'. The index of song_df is renamed to 'song_id'.
-        album_df contains the 'album' column. The index of album_df is renamed to 'album_id'.
+The DataFrame core_df is further divided into two DataFrames: song_df and album_df.
+song_df contains columns: 'name', 'track_number', 'disc_number', 'duration_ms', 'time_signature', 'year', and    'release_date'. The index of song_df is renamed to 'song_id'.
+album_df contains the 'album' column. The index of album_df is renamed to 'album_id'.
     The DataFrame unique_album is created by removing duplicate albums from album_df and assigning unique 'album_id' values.
-    A filtered DataFrame filtered_df is created by selecting rows where the 'artists' column contains the string 'Kanye'.
-    The DataFrame merged_df is created by merging two DataFrames, df1 and df2, based on the 'ID' column.
-    The DataFrame song_album is created by merging unique_album and album_df on the 'album' column. The index of song_album is renamed to 'song_id', and the 'album' column is dropped.
+A filtered DataFrame filtered_df is created by selecting rows where the 'artists' column contains the string 'Kanye'.
+The DataFrame merged_df is created by merging two DataFrames, df1 and df2, based on the 'ID' column.
+The DataFrame song_album is created by merging unique_album and album_df on the 'album' column. The index of song_album is renamed to 'song_id', and the 'album' column is dropped.
     The DataFrame attributes_df is created by selecting specific columns related to song attributes from core_df.
     The DataFrame artist_df is created to extract and process artist information from the 'artists' column.
         The 'artists' column is cleaned by removing square brackets and single quotes using regular expressions.
