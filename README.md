@@ -1,32 +1,24 @@
-This Jupyter Notebook contains code snippets for data manipulation and analysis using the Pandas library. The notebook focuses on processing a Spotify dataset and performing various operations on the data.
+This Jupyter Notebook demonstrates data manipulation and analysis using the Pandas library. The notebook focuses on processing a Spotify dataset.
 Dataset
 
-The dataset used in this notebook is stored in the file "spotify.csv". The data is read into a Pandas DataFrame named df using the pd.read_csv() function.
-
+The dataset is stored in the file "spotify.csv". It is read into a Pandas DataFrame named df.
 Data Manipulation
 
-Several data manipulation steps are performed on the DataFrame df:
+The following data manipulation steps are performed:
 
-The unnecessary columns ('Unnamed: 0', 'artist_ids', 'id', 'album_id') are dropped, resulting in the DataFrame core_df.
-The DataFrame core_df is further divided into two DataFrames: song_df and album_df.
-song_df contains columns: 'name', 'track_number', 'disc_number', 'duration_ms', 'time_signature', 'year', and    'release_date'. The index of song_df is renamed to 'song_id'.
-album_df contains the 'album' column. The index of album_df is renamed to 'album_id'.
-    The DataFrame unique_album is created by removing duplicate albums from album_df and assigning unique 'album_id' values.
-A filtered DataFrame filtered_df is created by selecting rows where the 'artists' column contains the string 'Kanye'.
-The DataFrame merged_df is created by merging two DataFrames, df1 and df2, based on the 'ID' column.
-The DataFrame song_album is created by merging unique_album and album_df on the 'album' column. The index of song_album is renamed to 'song_id', and the 'album' column is dropped.
-    The DataFrame attributes_df is created by selecting specific columns related to song attributes from core_df.
-    The DataFrame artist_df is created to extract and process artist information from the 'artists' column.
-        The 'artists' column is cleaned by removing square brackets and single quotes using regular expressions.
-        The 'artists' column is split into separate lists of artists.
-        The DataFrame is exploded to create a new DataFrame all_artists with one artist per row.
+ Unnecessary columns ('Unnamed: 0', 'artist_ids', 'id', 'album_id') are dropped, resulting in the DataFrame core_df.
+    Two DataFrames are created from core_df:
+        song_df contains song-related columns and is indexed by 'song_id'.
+        album_df contains album information and is indexed by 'album_id'.
+    Duplicate albums are removed from album_df, and unique 'album_id' values are assigned to create unique_album.
+    A filtered DataFrame filtered_df is created by selecting rows where the 'artists' column contains 'Kanye'.
+    Two DataFrames, df1 and df2, are merged based on the 'ID' column to create merged_df.
+    song_album is created by merging unique_album and album_df on the 'album' column, with the index renamed to 'song_id'.
+    attributes_df is created by selecting specific columns related to song attributes from core_df.
+    artist_df is created to extract and process artist information from the 'artists' column. The resulting DataFrame is exploded into all_artists.
 
 Additional Tables
 
-Apart from the data manipulation steps mentioned above, the notebook also creates additional tables:
+Apart from the data manipulation steps, an additional table named 'unique_artist' is created by extracting unique artists from artist_df.
 
-Artists: A DataFrame unique_artist is created by extracting unique artists from the artist_df DataFrame.
-
-Note
-
-Please note that the code snippets provided in this notebook are for illustration purposes and may require additional modifications or adaptations depending on the specific use case and dataset.
+Please note that the provided code snippets are for demonstration purposes and may require adjustments to suit specific use cases or datasets.
