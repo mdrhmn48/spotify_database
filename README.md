@@ -2,11 +2,12 @@ This Jupyter Notebook contains code snippets for data manipulation and analysis 
 Dataset
 
 The dataset used in this notebook is stored in the file "spotify.csv". The data is read into a Pandas DataFrame named df using the pd.read_csv() function.
+
 Data Manipulation
 
 Several data manipulation steps are performed on the DataFrame df:
 
-    The unnecessary columns ('Unnamed: 0', 'artist_ids', 'id', 'album_id') are dropped, resulting in the DataFrame core_df.
+The unnecessary columns ('Unnamed: 0', 'artist_ids', 'id', 'album_id') are dropped, resulting in the DataFrame core_df.
     The DataFrame core_df is further divided into two DataFrames: song_df and album_df.
         song_df contains columns: 'name', 'track_number', 'disc_number', 'duration_ms', 'time_signature', 'year', and 'release_date'. The index of song_df is renamed to 'song_id'.
         album_df contains the 'album' column. The index of album_df is renamed to 'album_id'.
@@ -24,7 +25,7 @@ Additional Tables
 
 Apart from the data manipulation steps mentioned above, the notebook also creates additional tables:
 
-    Artists: A DataFrame unique_artist is created by extracting unique artists from the artist_df DataFrame.
+Artists: A DataFrame unique_artist is created by extracting unique artists from the artist_df DataFrame.
 
 Note
 
